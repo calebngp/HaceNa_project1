@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="bg-white border-blue-700 px-2 sm:px-4 py-5 rounded dark:bg-blue-700">
+    <nav class="bg-blue-700 px-2 sm:px-4 py-5 rounded-xl">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="{{ url_for ('inicio') }}" class="flex items-center">
         <span class="self-center text-3xl font-bold whitespace-nowrap dark:text-white">HaceNa</span>
@@ -44,37 +44,30 @@
           <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
             <div class="mx-auto grid gap-6 md:w-4/4 lg:w-full lg:grid-cols-2">
               <div
-                class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8"
+                class="mx-16 bg-white rounded-2xl shadow-xl px-8 py-4"
               >
                 <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-blue-700">
+                  <h3 class="text-4xl font-bold text-blue-700">
                     Buscar Freelance
                   </h3>
                   <p class="mb-6">
                     Buscador personalizado de diferentes profesionales freelancers o en busca de un trabajo por contrato
                   </p>
                 </div>
-                <a href="{{ url_for ('profile_card2') }}"><button
-                 
-                  class="shadow bg-blue-700 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
-                  type="button"
-                >
-                  BuscaNa
-                </button></a>
+                    <a href="{{ url_for ('buscana') }}"><button class="mx-2 py-2 px-2 rounded-xl bg-blue-700 hover:bg-orange-400"><h1 class="text-white text-xl font-bold py-0 px-3">BuscaNa
+                    </h1></button></a>
                 <img
-                  src="https://tailus.io/sources/blocks/end-image/preview/images/graphic.svg"
-                  class="w-2/3 ml-auto -mb-12"
-                  alt="illustration"
-                  loading="lazy"
-                  width="900"
-                  height="600"
+                  src="{{url_for ('static', filename= 'imagen6.png')}}"
+                  class="w-5/10 -mt-16 ml-32 -mb-12"
+                  width="1000"
+                  height="1350"
                 />
               </div>
               <div
-                class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8"
+                class="mx-16 bg-white rounded-2xl shadow-xl px-8 py-4"
               >
                 <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-blue-700">
+                  <h3 class="text-4xl font-bold text-blue-700">
                     Publicar Proyecto
                   </h3>
                   <p class="mb-6">
@@ -82,21 +75,14 @@
                   </p>
                 </div>
                 <dev>
-                  <a href="{{ url_for ('publicana') }}"><button
-                     
-                    class="shadow bg-blue-700 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
-                    type="button"
-                  >
-                    PublicaNa
-                  </button></a>
+                    <a href="{{ url_for ('publicana') }}"><button class="mx-4 py-2 px-2 rounded-xl bg-blue-700 hover:bg-orange-400"><h1 class="text-white text-xl font-bold py-0 px-3">PublicanaNa
+                    </h1></button></a>
                 </dev>
                 <img
-                  src="https://tailus.io/sources/blocks/end-image/preview/images/ui-design.svg"
-                  class="w-2/3 ml-auto"
-                  alt="illustration"
-                  loading="lazy"
-                  width="900"
-                  height="600"
+                  src="{{url_for ('static', filename= 'imagen7.png')}}"
+                  class="w-5/10 -mt-16 ml-24 -mb-12"
+                  width="1000"
+                  height="1350"
                 />
               </div>
             </div>
