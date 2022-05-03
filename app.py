@@ -56,7 +56,7 @@ def inicio(): #Creamos la funcion inicio
             #Retornamos la renderizacion de un documento
 
 @app.route("/contrataNabuscar")
-def contratana():
+def contratana_buscar():
     datos1 = Contrata.query.all()
     return render_template('contrataNa_Buscar_o_publicar.html')
 
@@ -75,7 +75,7 @@ def ingresana():
     datos2 = Registro(email = request.form['email'], contrasena = request.form['contrasena'], done=False)
     db.session.add(datos2)
     db.session.commit()
-    return render_template('ingresana2.html')
+    return render_template('ingresana.html')
 
 @app.route("/registratena", methods=['POST'])
 def registratena():
@@ -92,12 +92,49 @@ def formulario():
     db.session.add(datos4)
     db.session.commit() # Para que lo guarde/ejecute
     return redirect(url_for('formulario_general_registro.html'))
+
 @app.route("/contrataNaregistro", methods=['POST'])
 def contratareg():
     datos5 = Contrata(descripcion_del_trabajo = request.form['descripcion_trabajo'], categoria_del_trabajo = request.form['categoria_trabajo'], modalidad = request.form['modalidad'], monto = request.form['monto'], done=False)
     db.session.add(datos5)
     db.session.commit() # Para que lo guarde/ejecute
     return redirect(url_for('registratena.html'))
+
+@app.route('/informatena')
+def informatena():
+    return redirect(url_for('informatena.html'))
+
+@app.route('/contactana')
+def contactana():
+    return redirect(url_for('contactana.html'))
+
+
+@app.route("/trabajana")
+def trabajana():
+    return render_template('trabajana.html')
+
+@app.route("/contratana")
+def contratana():
+    return render_template('contratana.html')
+
+@app.route("/aprendena")
+def aprendena():
+    return render_template('aprendena.html')
+
+
+@app.route("/contratana_menu")
+def contratana_menu():
+    return render_template('contratana_menu.html')
+
+
+@app.route("/publicana")
+def publicana():
+    return render_template('publicana.html')
+
+
+@app.route("/profile_card2")
+def profile_card2():
+    return render_template('profile_card2.html')
 
 
 if __name__ == "__main__":
