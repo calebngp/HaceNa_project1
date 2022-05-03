@@ -44,23 +44,29 @@ class Ensenana(db.Model):
     done        = db.Column(db.Boolean)
 
 
-
-
-
-# Para renderizar la vista
-
-@app.route("/")     #Llamabamos al metodo route y le pasamos el argumento slug o url
-def inicio(): #Creamos la funcion inicio
-    #datos = Registro.query.all()
-    return render_template('inicio.html')
-            #Retornamos la renderizacion de un documento
-
 @app.route("/contrataNabuscar")
 def contratana_buscar():
     datos1 = Contrata.query.all()
     return render_template('contrataNa_Buscar_o_publicar.html')
 
-@app.route("/ensenana", methods=['POST'])
+@app.route("/")     #Llamabamos al metodo route y le pasamos el argumento slug o url
+def inicio(): #Creamos la funcion inicio
+    return render_template('inicio.html')
+                #Retornamos la renderizacion de un documento
+
+@app.route("/trabajana")
+def trabajana():
+    return render_template('trabajana.html')
+
+@app.route("/contratana")
+def contratana():
+    return render_template('contratana.html')
+
+@app.route("/aprendena")
+def aprendena():
+    return render_template('aprendena.html')
+
+@app.route("/ensenana")
 def ensenana():
     datos1 = Ensenana.query.all()
     datos1 = Ensenana(denominacion_del_curso = request.form['denominacion del curso'], descripcion_del_curso = request.form['descripcion del curso'], modulos = request.form['modulos'], duracion = request.form['duracion'], area = request.form['area'], done=False)
@@ -68,7 +74,8 @@ def ensenana():
     db.session.commit()
     return render_template('ensenana.html')
 
-@app.route("/ingresana", methods=["POST"])
+
+@app.route("/ingresana")
 def ingresana():
     datos2 = Registro.query.all()
 
@@ -100,7 +107,12 @@ def contratareg():
     db.session.commit() # Para que lo guarde/ejecute
     return redirect(url_for('registratena.html'))
 
-@app.route('/informatena')
+@app.route("/registratena")
+def registratena():
+    return render_template('registratena.html')
+
+@app.route("/informatena")
+
 def informatena():
     return redirect(url_for('informatena.html'))
 
@@ -127,6 +139,10 @@ def contratana_menu():
     return render_template('contratana_menu.html')
 
 
+@app.route("/contactana")
+def contactana():
+    return render_template('contactana.html')
+
 @app.route("/publicana")
 def publicana():
     return render_template('publicana.html')
@@ -135,8 +151,7 @@ def publicana():
 @app.route("/profile_card2")
 def profile_card2():
     return render_template('profile_card2.html')
-
-
+  
 @app.route("/buscana")
 def buscana():
     return render_template('buscana.html')
