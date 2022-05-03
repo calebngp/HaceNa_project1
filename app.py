@@ -45,9 +45,13 @@ def contratana_menu():
 def contactana():
     return render_template('contactana.html')
 
-@hacena.route("/profile_card")
-def profile_card():
-    return render_template('profile_card.html')
+@hacena.route("/publicana")
+def publicana():
+    return render_template('publicana.html')
+
+@hacena.route("/profile_card2")
+def profile_card2():
+    return render_template('profile_card2.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
